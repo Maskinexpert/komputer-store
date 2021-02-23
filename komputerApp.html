@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Komputer Store</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width", initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  background-color: WHITE;
+  margin: 0;
+}
+
+.header {
+  padding: 40px;
+  background: GRAY;
+  color: ORANGE;
+  font-size: 20px;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 20px;
+  height: 40vh;
+}
+
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.footer {
+  background-color: BURLYWOOD;
+  padding: 100px;
+  text-align: center;
+}
+
+
+.p1 {
+  color: BLACK;
+}
+
+.p2 {
+  border-radius: 25px;
+  background-color: CORNSILK;
+  text-align: center;
+}
+
+
+.button, .repay {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: WHITE;
+  border: none;
+  box-shadow: 0 9px #999;
+
+}
+
+.button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.repay {
+  display: none;
+}
+
+.repay:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(19px);
+}
+
+
+select {
+  margin: 50px;
+  width: 250px;
+  padding: 5px 5px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #CCC;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>Komputer Store</h1>
+    <p class="p1">Puts the bin back in bargain bin</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <p class="p2">Bank</p>
+      <p class="p2" id="balanceAmount">Balance: 200kr.</p>
+      <p class="p3" id="outstandingLoan"></p>
+      <button class="button" id="loanButton" style="background-color: GOLDENROD;"><span>Get A Loan</span></button>
+    </div>
+    <div class="column">
+      <p class="p2">Work</p>
+      <p class="p2" id="payAmount">Pay: 0kr.</p>
+      <button class="button" id="bankButton" style="background-color: INDIGO;"><span>Bank</span></button>
+      <button class="button" id="workButton" style="background-color: DEEPSKYBLUE;"><span>Work</span></button>
+      <button class="repay" id="repayButton" style="background-color: CADETBLUE;"><span>Repay Loan</span></button>
+    </div>
+    <div class="column" id="selectTest">
+      <p class="p2">Laptops</p>
+      <select id="selectMenu">
+        <option disabled selected value="0"> -select a laptop- </option>
+        <option value="1">IBEEM ThoughtPad</option>
+        <option value="2">Pear Electricfilm</option>
+        <option value="3">Shiba T800</option>
+        <option value="4">ADell Remedy</option>
+      </select>
+      <p class="p2" id="selectOutput"></p>
+    </div>
+  </div>
+  <div class="footer" id="footer">
+    <p id="alertOutput"></p>
+    <button class="button" id="buyButton" style="background-color: FORESTGREEN;"><span>BUY NOW!</span></button>
+  </div>
+  <script src="komputerAppScript.js"></script>
+</body>
+</html>
+
+
+
+  
