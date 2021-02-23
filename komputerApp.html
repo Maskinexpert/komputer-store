@@ -53,7 +53,7 @@ body {
 }
 
 
-.button, .repay {
+.button, .repay, .buy {
   display: inline-block;
   padding: 15px 25px;
   font-size: 24px;
@@ -81,6 +81,14 @@ body {
   transform: translateY(19px);
 }
 
+.buy {
+  display: none;
+}
+
+.buy:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(19px);
+}
 
 select {
   margin: 50px;
@@ -107,7 +115,7 @@ select {
     <div class="column">
       <p class="p2">Bank</p>
       <p class="p2" id="balanceAmount">Balance: 200kr.</p>
-      <p class="p3" id="outstandingLoan"></p>
+      <p class="p2" id="outstandingLoan"></p>
       <button class="button" id="loanButton" style="background-color: GOLDENROD;"><span>Get A Loan</span></button>
     </div>
     <div class="column">
@@ -131,7 +139,7 @@ select {
   </div>
   <div class="footer" id="footer">
     <p id="alertOutput"></p>
-    <button class="button" id="buyButton" style="background-color: FORESTGREEN;"><span>BUY NOW!</span></button>
+    <button class="buy" id="buyButton" style="background-color: FORESTGREEN;"><span>BUY NOW!</span></button>
   </div>
   <script src="komputerAppScript.js"></script>
 </body>

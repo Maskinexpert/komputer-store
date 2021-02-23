@@ -52,6 +52,7 @@ function selectScript() {
     document.getElementById("laptopImage").src = laptopResult.image;
     document.getElementById("laptopDescription").innerHTML="<b>" + laptopResult.price + "kr.</b><br>" + laptopResult.description;
   } else {
+    document.getElementById('buyButton').style.display = "inline-block";
     const imgCreate = document.createElement("IMG");
     imgCreate.setAttribute("src", laptopResult.image);
     imgCreate.setAttribute("id", "laptopImage");
@@ -90,13 +91,15 @@ addLoanButton.addEventListener('click', function(){
     alert("Pay off your loan first");
   } else {
     let inputLoan = parseInt(prompt("How much to you want to loan?", 0));
-    if(inputLoan > 0) {
+    if(inputLoan > 0 && inputLoan <= (balance*2)) {
       document.getElementById('repayButton').style.display = "inline-block";
       missingLoan = 0;
       missingLoan += inputLoan;
       outLoan.innerHTML="Outstanding Loan: " + missingLoan + "kr.";
       outLoan.style.display = "block";
       balance += inputLoan;
+    }else {
+      alert("Impossible loan amount");
     }
   }
 });
